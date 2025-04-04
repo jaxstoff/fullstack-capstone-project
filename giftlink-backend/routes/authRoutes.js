@@ -117,15 +117,22 @@ router.put('/update', async (req, res) => {
         // Task between 5 & 6?
         // update first, lastname - need to do some validation here also?
         // Update password separately?
-        const firstName = req.body.firstname;
-        if (firstName) {
-            existingUser.firstName = firstName;
-            logger.info(`User firstname updating to ${firstName}`);
-        }
-        const lastName = req.body.lastname;
-        if (lastName) {
-            existingUser.lastName = lastName;
-            logger.info(`User lastname updating to ${lastName}`);
+        // const firstName = req.body.firstname;
+        // if (firstName) {
+        //     existingUser.firstName = firstName;
+        //     logger.info(`User firstname updating to ${firstName}`);
+        // }
+        // const lastName = req.body.lastname;
+        // if (lastName) {
+        //     existingUser.lastName = lastName;
+        //     logger.info(`User lastname updating to ${lastName}`);
+        // }
+
+        // dtbase has a first/last name but we cn update only first'name'?
+        const name = req.body.name;
+        if (name) {
+            existingUser.name = name;
+            logger.info(`User name updating to ${name}`);
         }
 
         existingUser.updatedAt = new Date();
