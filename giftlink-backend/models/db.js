@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 // db.js
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
@@ -10,8 +11,8 @@ const dbName = "giftdb";
 
 async function connectToDatabase() {
     if (dbInstance){
-        return dbInstance
-    };
+        return dbInstance;
+    }
 
     const client = new MongoClient(url);      
 
