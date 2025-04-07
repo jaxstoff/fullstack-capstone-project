@@ -33,6 +33,7 @@ jobs:
           find ./giftlink-backend -name searchRoutes.js -exec jshint {} +
           find ./giftlink-backend -name db.js -exec jshint {} +
           find ./giftlink-backend -name index.js -exec jshint {} +
+          find ./giftlink-backend -name logger.js -exec jshint {} +
           echo "Linted all the js files successfully"
 
   client_build:
