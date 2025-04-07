@@ -58,13 +58,13 @@ router.post('/register', async (req, res) => {
 });
 // Login
 router.post('/login', async (req, res) => {
-    console.log("\n\n Inside login")
+    console.log("\n\n Inside login");
     try {
         const db = await connectToDatabase();
         const collection = db.collection("users");
         const theUser = await collection.findOne({ email: req.body.email });
         if (theUser) {
-            let result = await bcryptjs.compare(req.body.password, theUser.password)
+            let result = await bcryptjs.compare(req.body.password, theUser.password);
             if (!result) {
                 logger.error('Passwords do not match');
                 return res.status(404).json({ error: 'Wrong pasword' });
@@ -129,7 +129,7 @@ router.put('/update', async (req, res) => {
         //     logger.info(`User lastname updating to ${lastName}`);
         // }
 
-        // dtbase has a first/last name but we cn update only first'name'?
+        // dtbase has a first/last name but we can update only first'name'?
         const name = req.body.name;
         if (name) {
             existingUser.name = name;
